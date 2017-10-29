@@ -20,7 +20,7 @@
         <!--INLINE STYLES-->
         <style>
             body{
-                background-color: #efefef;
+                background-color: #ffffff;
                 overflow-x: hidden;
                 cursor: url(assets/cursor.png), auto;
             }
@@ -43,24 +43,102 @@
     <body class="the-body">
     
         <?php
-             include("page_elements/nav_bar.php");    
-        
+            include("page_elements/nav_bar.php");    
+            include("page_elements/index_hero_div.php");
         ?>
-        
-        <div class="hero-div white">
-            <div class="container">
-                <div class="center-row-div">
-                    <div class="hero-div-center-row-div-underlay">
-                        <h1 class="hero-div-center-row-div-underlay-text">Welcome</h1>
+
+        <div class="about-us-div" id="about-us-div-id">
+            
+            <div class="row">
+            
+                <div class="col l9 m9 s12">
+                    <div style="min-height:300px;width: 100%; background-color: #191919">
+                    
+                        <div class="row">
+                            <div class="col l1 m1 s1">
+                                <div class="about-us-div-heading-div">
+                                    <h4>
+                                        About Us
+                                        <span class="about-us-div-heading-bar-span"></span>
+                                    </h4>
+                                </div>
+                            
+                            </div>
+                            
+                            <div class="col l11 m11 s11">
+                                <div class="hide-on-med-and-down" style="font-weight:200;padding:50px;padding-top:160px;padding-bottom:160px;color:#e5e5e5;padding-right:200px;font-size:18px;">
+                                    <p>
+                                    Humans thrive for rhythm. Art is the purest fulfilment of the yearn for harmony. One has absolute control over his art, yet what you spawn awes you, for even with complete clout, Art prevails. And therein lies the beauty; the chastity of Art surmounts. Leisure is the cynosure for all release, repose, and respite – and we bring you just that.
+                                    Humans thrive for rhythm. Art is the purest fulfilment of the yearn for harmony. One has absolute control over his art, yet what you spawn awes you, for even with complete clout, A
+                                    </p>
+                                </div>
+                                <div class="hide-on-large-only" style="font-weight:200;padding:50px;padding-top:160px;padding-bottom:80px;color:#e5e5e5;padding-right:50px;font-size:18px;">
+                                    <p>
+                                    Humans thrive for rhythm. Art is the purest fulfilment of the yearn for harmony. One has absolute control over his art, yet what you spawn awes you, for even with complete clout, Art prevails. And therein lies the beauty; the chastity of Art surmounts. Leisure is the cynosure for all release, repose, and respite – and we bring you just that.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    
                     </div>
-                    <div class="hero-div-center-row-div-overlay">
-                        <h1 class="hero-div-center-row-div-overlay-text">We provide <strong>solutions</strong>, <br>robust and exquisit
-                            <span class="hero-div-overlay-text-bar-span"></span>
-                        </h1>
-                    </div>
+                    
                 </div>
+            
             </div>
+        
+            
+            
+            
+            <div class="row hide-on-med-and-down" style="transform:translateY(-150px);">
+            
+                <div class="col l3 m3 s12"></div>
+                <div class="col l9 m9 s12">
+                    
+                    <div style="min-height:300px;width: 100%; background:url(https://chaptr.studio/wp-content/themes/chaptr_new/library/images/WLA.jpg) no-repeat center;background-size:cover">
+                    
+                        <div class="row">
+                            <div class="col l1 m1 s1">
+                                <div class="about-us-div-heading-div">
+                                    <h4>
+                                        About Us
+                                        <span class="about-us-div-heading-bar-span"></span>
+                                    </h4>
+                                </div>
+                            
+                            </div>
+                            
+                            <div class="col l11 m11 s11">
+                                <div class="hide-on-med-and-down" style="font-weight:200;padding:50px;padding-top:160px;padding-bottom:160px;color:#e5e5e5;padding-right:200px;font-size:18px;">
+                                    <p>
+                                    Humans thrive for rhythm. Art is the purest fulfilment of the yearn for harmony. One has absolute control over his art, yet what you spawn awes you, for even with complete clout, Art prevails. And therein lies the beauty; the chastity of Art surmounts. Leisure is the cynosure for all release, repose, and respite – and we bring you just that.
+                                    Humans thrive for rhythm. Art is the purest fulfilment of the yearn for harmony. One has absolute control over his art, yet what you spawn awes you, for even with complete clout, A
+                                    </p>
+                                </div>
+                                <div class="hide-on-large-only" style="font-weight:200;padding:50px;padding-top:160px;padding-bottom:80px;color:#e5e5e5;padding-right:50px;font-size:18px;">
+                                    <p>
+                                    Humans thrive for rhythm. Art is the purest fulfilment of the yearn for harmony. One has absolute control over his art, yet what you spawn awes you, for even with complete clout, Art prevails. And therein lies the beauty; the chastity of Art surmounts. Leisure is the cynosure for all release, repose, and respite – and we bring you just that.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+            
+            </div>
+        
+            
+            
+            
         </div>
+        
+        
+        
         
         <div style="height:1000px"></div>
         
