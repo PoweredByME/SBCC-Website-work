@@ -9,18 +9,17 @@ function windowOnLoad(){
 }
 
 function windowOnScroll(){
-    var ratio = $(window).scrollTop()/ $(document).height();
-    $('.hero-div-center-row-div-overlay').css('transform', 'translateY(' + heroDivOverlay_Y + 'px)')
-    var nhdoly = heroDivOverlay_Y - heroDivOverlay_Y * ratio * 13;
-    var nhduly = heroDivUnderLay_Y - heroDivUnderLay_Y * ratio * 7;
-    $('.hero-div-center-row-div-overlay').css('transform', 'translateY(' + nhdoly + 'px)');
-    $('.hero-div-center-row-div-underlay').css('transform', 'translateY(' + nhduly + 'px)');
+    heroDivParrallax();
+    aboutUsDivImageAnimeTrigger();
+    aboutUsDivTextAnimationTrigger();
 }
 
 
-
+var onMenuBtnClick_inProcess = false;
 function onMenuBtnClick(){
+    if(onMenuBtnClick_inProcess == true){return;}
     if($("span.menu-btn-text-p").text() == "CLOSE"){
+        onMenuBtnClick_inProcess = true;
         var to = 500;
         if($(window).innerWidth() <= 990){ to = 300;}
         setTimeout(function(){
@@ -29,6 +28,7 @@ function onMenuBtnClick(){
             $("span.menu-btn-text-p").text("MENU");
             $(".menu-btn-text").toggleClass("menu-btn-text-tilt");
             $(".menu-btn-div").toggleClass("menu-btn-div-white");
+            onMenuBtnClick_inProcess = false;
         },to);
         setTimeout(function(){
             $(".menu-btn-bar").toggleClass("menu-btn-bar-visible");
@@ -37,6 +37,7 @@ function onMenuBtnClick(){
         },100);
         $(".menu-div-text-p").toggleClass("menu-div-text-p-show");
     }else{
+        onMenuBtnClick_inProcess = true;
         setTimeout(function(){
             $(".menu-btn-bar").toggleClass("menu-btn-bar-visible");
             $(".menu-div-text-bar-span").toggleClass("menu-div-text-bar-span-show");
@@ -46,6 +47,7 @@ function onMenuBtnClick(){
                     item.toggleClass("menu-option-h3-show");
                 },100*i);
             })
+            setTimeout(function(){onMenuBtnClick_inProcess=false;},200);
         },300);
         setTimeout(function(){
             $(".menu-div-text-p").toggleClass("menu-div-text-p-show");
@@ -59,6 +61,73 @@ function onMenuBtnClick(){
     }
     
 }
+
+function heroDivParrallax(){
+    var ratio = $(window).scrollTop()/ $(document).height();
+    $('.hero-div-center-row-div-overlay').css('transform', 'translateY(' + heroDivOverlay_Y + 'px)')
+    var nhdoly = heroDivOverlay_Y - heroDivOverlay_Y * ratio * 13;
+    var nhduly = heroDivUnderLay_Y - heroDivUnderLay_Y * ratio * 7;
+    $('.hero-div-center-row-div-overlay').css('transform', 'translateY(' + nhdoly + 'px)');
+    $('.hero-div-center-row-div-underlay').css('transform', 'translateY(' + nhduly + 'px)');
+}
+
+
+var aboutUsDivImageAnimeTrigger_flag = {flag:false};
+function aboutUsDivImageAnimeTrigger(){
+    if($(window).width() > 992){
+        onScrollAction($(".about-us-div-imag-div-container"), $(window).height()/2, aboutUsDivImageAnimeTrigger_flag, function(){
+            $(".about-us-div-imag-div-container").toggleClass("about-us-div-imag-div-container-show");
+        });
+    }else{
+        onScrollAction($(".about-us-div-imag-div-container"), $(window).height()/2.5, aboutUsDivImageAnimeTrigger_flag, function(){
+            $(".about-us-div-imag-div-container").toggleClass("about-us-div-imag-div-container-show");
+        });
+    }
+}
+
+var aboutUsDivTextAnimationTrigger_flag = {flag:false};
+function aboutUsDivTextAnimationTrigger(){
+    onScrollAction($(".about-us-div-text-div"),$(window).height() / 2.8, aboutUsDivTextAnimationTrigger_flag, function(){
+        $(".about-us-div-text-div").toggleClass("show");
+        $(".div-for-about-us-text-div-animation").toggleClass("show");
+        $(".about-us-div-heading").toggleClass("show");
+        $(".about-us-div-text-content").toggleClass("show");
+    });
+    
+    
+}
+
+
+
+function onScrollAction(element, offset,  globalvariable_r,callback){
+    var top = element.offset().top - $(window).scrollTop();
+    var trigger_offset = $(window).innerHeight() - offset;
+    if(top <= trigger_offset && globalvariable_r.flag == false){
+        callback();
+        globalvariable_r.flag = true;
+        //console.log( element.attr("class") +" lepos = " + top + " " + trigger_offset + " " + globalvariable_r.flag);
+    }else if (top > trigger_offset && globalvariable_r.flag == true){
+        callback();
+        globalvariable_r.flag = false;
+        //console.log( element.attr("class") +" lepos = " + top + " " + trigger_offset + " " + globalvariable_r.flag);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

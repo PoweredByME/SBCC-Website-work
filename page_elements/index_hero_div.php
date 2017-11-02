@@ -11,10 +11,11 @@
             <div class="container">
                 <div class="center-row-div">
                     <div class="hero-div-center-row-div-underlay">
-                        <h1 class="hero-div-center-row-div-underlay-text">Welcome</h1>
+                        <h1 class="hero-div-center-row-div-underlay-text hide-on-med-and-down">Welcome</h1>
+                        <h1 class="hero-div-center-row-div-underlay-text hide-on-large-only">Hi,</h1>
                     </div>
                     <div class="hero-div-center-row-div-overlay">
-                        <h1 class="hero-div-center-row-div-overlay-text">We provide <strong>solutions</strong>, <br>robust and exquisit
+                        <h1 class="hero-div-center-row-div-overlay-text">We provide <strong class="desktop-sol hide-on-med-and-down">solutions</strong><strong class="hide-on-large-only">solutions</strong><span class="hide-on-large-only">,</span> <br>robust and exquisit
                             <span class="hero-div-overlay-text-bar-span"></span>
                         </h1>
                     </div>
@@ -22,7 +23,7 @@
             </div>
             
             <div class="take-a-tour-div-button" id="take-a-tour-div-button-id" style="outline:none">
-                <a href="#take-a-tour-div-button-id" style="width:100%; text-align:center;color:#e5e5e5;display:block;cursor:url(assets/cursor.png),auto;outline:none">
+                <a href="#take-a-tour-div-button-id" style="width:100%; text-align:center;color:white;display:block;cursor:url(assets/cursor.png),auto;outline:none">
                     <p >
                         <span>
                             <i class="fa fa-long-arrow-down fa-2x" aria-hidden="true"></i>
