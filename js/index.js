@@ -4,14 +4,35 @@ function windowOnLoad(){
     heroDivUnderLay_Y = parseInt($('.hero-div-center-row-div-underlay').css('transform').split(',')[5]);
     heroDivOverlay_Y = parseInt($('.hero-div-center-row-div-overlay').css('transform').split(',')[5]);
     window.onscroll = windowOnScroll;
+    window.onresize = windowOnResize;
     windowOnScroll();
+    windowOnResize();
     smoothScroolling();
+    setTimeout(onWindowLoad_effect, 800);
 }
+
+function onWindowLoad_effect(){
+    $(".menu-btn-div").removeClass("before-load");
+    $(".navbar-div").removeClass("before-load");
+    $(".start-a-project-div-btn").removeClass("before-load");
+    $(".hero-div-center-row-div-underlay-text").removeClass("before-load");
+    $(".hero-div-center-row-div-overlay-text").removeClass("before-load");
+    $(".take-a-tour-div-button").removeClass("before-load");
+    $(".about-us-div-imag-div-container").removeClass("before-load");
+}
+
 
 function windowOnScroll(){
     heroDivParrallax();
     aboutUsDivImageAnimeTrigger();
     aboutUsDivTextAnimationTrigger();
+    aboutUsDivImageAnimeTrigger2();
+    ourWorkDivHeadingAnimationTrigger();
+}
+
+
+function windowOnResize(){
+    $(".about-us-complay-name-div").height($(".about-us-div-text-div").height() + 120);
 }
 
 
@@ -85,6 +106,25 @@ function aboutUsDivImageAnimeTrigger(){
     }
 }
 
+
+var aboutUsDivImageAnimeTrigger2_flag = {flag:false};
+function aboutUsDivImageAnimeTrigger2(){
+    onScrollAction($(".about-us-complay-name-div"), $(window).height() / 2, aboutUsDivImageAnimeTrigger2_flag, function(){
+        if($(".about-us-complay-name-div").hasClass("show")){
+            $(".about-us-complay-name-div-heading").toggleClass("show");
+            setTimeout(function(){
+                    $(".about-us-complay-name-div").toggleClass("show");
+            },300);
+        }else{
+            $(".about-us-complay-name-div").toggleClass("show");
+            setTimeout(function(){
+                    $(".about-us-complay-name-div-heading").toggleClass("show");
+            },300);
+        }
+    })
+}
+
+
 var aboutUsDivTextAnimationTrigger_flag = {flag:false};
 function aboutUsDivTextAnimationTrigger(){
     onScrollAction($(".about-us-div-text-div"),$(window).height() / 2.8, aboutUsDivTextAnimationTrigger_flag, function(){
@@ -95,6 +135,14 @@ function aboutUsDivTextAnimationTrigger(){
     });
     
     
+}
+
+
+var ourWorkDivHeadingAnimationTrigger_flag = {flag:false};
+function ourWorkDivHeadingAnimationTrigger(){
+    onScrollAction($(".our-word-div-heading-div"), $(window).height()/4, ourWorkDivHeadingAnimationTrigger_flag, function(){
+        $(".our-word-div-heading-div").toggleClass("show");
+    })
 }
 
 

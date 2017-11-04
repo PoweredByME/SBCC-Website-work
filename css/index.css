@@ -7,15 +7,20 @@
     width: 100vw;
     height: 100vh;
     margin-top: calc(-100vh + 56px);
-    background: #fafafa;
+    background: #000000;
     z-index: 100;
     transition-property: all;
     transition-duration: 0.3s;
 }
 
+.before-load.navbar-div{
+    margin-top: calc(-100vh + 0px);
+}
+
+
 .navbav-all-visible{
     margin-top: 0px;
-    background: #191919;
+    background: #000000;
 }
 
 .visible-navbar{
@@ -53,7 +58,15 @@
     padding-left: 20px;
     z-index: 200;
     cursor:default;
+    transform: translateY(0px);
+    transition-property: all;
+    transition-duration: 0.3s;
 }
+
+.before-load.menu-btn-div{
+    transform: translateY(-100px);
+}
+
 
 .menu-btn-text{
     transition-property: all;
@@ -231,7 +244,19 @@ span.menu-btn-bar{
     font-weight: 300;
     color : #191919;
     font-family: 'Lato', sans-serif !important;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    transition-timing-function: ease-out;
+    transform: translateY(0px);
+    opacity: 1;
 }
+
+.before-load.hero-div-center-row-div-overlay-text{
+    transform: translateY(100px);
+    opacity: 0;
+}
+
 
 .hero-div-center-row-div-overlay-text .desktop-sol{
     background: rgba(25, 25, 25,1);
@@ -249,6 +274,18 @@ span.menu-btn-bar{
     font-weight: 700;
     color: #f5f5f5;
     font-family: 'Merriweather', serif !important;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    transition-timing-function: ease-out;
+    transform: translateX(0px);
+    opacity: 1;
+        
+}
+
+.before-load.hero-div-center-row-div-underlay-text{
+    transform: translateX(-100px);
+    opacity: 0;
 }
 
 .hero-div-overlay-text-bar-span{
@@ -267,8 +304,15 @@ span.menu-btn-bar{
     right: 0px;
     margin-right: 60px;
     transform-origin: right;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateY(0px);
     z-index: 4 !important;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+}
+
+.before-load.start-a-project-div-btn{
+    transform: rotate(-90deg) translateY(100px);
 }
 
 .start-a-project-div-btn-bar-span{
@@ -287,6 +331,7 @@ span.menu-btn-bar{
 .start-a-project-div-btn-p{
     font-family: 'Lato', 'Roboto', sans-serif !important;
     z-index: 4 !important;
+    
 }
 
 .start-a-project-div-btn-p:hover .start-a-project-div-btn-bar-span{
@@ -303,6 +348,17 @@ span.menu-btn-bar{
     margin: 10.5px;
     display: flex;
     align-content: center;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.before-load.take-a-tour-div-button{
+    transform: translateX(-100px);
+    opacity: 0;
 }
 
 
@@ -329,6 +385,17 @@ transform: scale(0.8);
     overflow-x: hidden;
     height: 480px;
     z-index: 4;   
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-out;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition-timing-function: ease-out;
+}
+
+.before-load.about-us-div-imag-div-container{
+    transform: scaleX(0);
 }
 
 
@@ -439,6 +506,89 @@ transform: scale(0.8);
 .show.about-us-div-text-content{
     opacity: 1;
     transform: translateY(0px);
+}
+
+.about-us-complay-name-div{
+    background: #191919;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.show.about-us-complay-name-div{
+    transform: scaleX(1);
+}
+
+.about-us-complay-name-div h5 span{
+    font-size: 12px;
+    font-family: 'Lato','Roboto' ,sans-serif !important;
+}
+
+.about-us-complay-name-div h5{
+    margin: auto;
+    color: white;
+    font-family: 'Merriweather', serif !important;
+    font-weight: 200;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.show.about-us-complay-name-div-heading{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+
+
+/*Our work div*/
+
+.our-work-div{
+    padding-top: 100px;
+}
+
+.our-word-div-heading-div{
+    transform: translateY(100px);
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+.show.our-word-div-heading-div{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+.our-word-div-heading-div p{
+    margin-bottom: 0px;
+}
+
+.our-word-div-heading-div p span{
+    font-family: 'Lato', 'Roboto', sans-serif !important;
+}
+
+.our-word-div-heading-div h1{
+    margin-top: 0px;
+    font-family: 'Merriweather', serif !important;
+    margin-bottom: 100px;
+}
+
+.our-word-div-heading-div h3{
+    margin-top: 0px;
+    font-family: 'Merriweather', serif !important;
+    margin-bottom: 60px;
 }
 
 @media screen and (max-width:993px){
@@ -567,6 +717,10 @@ transform: scale(0.8);
         height: 2px
     }
 
+    
+    .our-work-div{
+        padding-top: 60px;
+    }
 
 }
 @media screen and (max-width:370px){
